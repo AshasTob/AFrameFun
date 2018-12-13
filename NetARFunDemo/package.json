@@ -1,0 +1,10 @@
+{
+  "name": "WHO-AR",
+  "version": "1.0.0",
+  "description": "Augmented Reality for promotion of EHII",
+  "private": true,
+  "dependencies": {
+    "ar.js": ">=1.4.10"
+  },
+  "author": "yap@interlogic.com.ua"
+}

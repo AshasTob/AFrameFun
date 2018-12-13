@@ -1,0 +1,3 @@
+# robots.txt for test environments(dev, preview, content, etc.)
+User-agent: *
+Disallow: /
