@@ -140,6 +140,8 @@
     <Content Include="Content\images\screens\1.png" />
     <Content Include="Content\images\screens\2.png" />
     <Content Include="Content\images\screens\3.png" />
+    <Content Include="Content\images\screens\4.png" />
+    <Content Include="Content\images\screens\5.png" />
     <Content Include="Content\models\IPhone\phone.png" />
     <Content Include="customComponents\ar-keyboard-control.js" />
     <Content Include="customComponents\utils.js" />

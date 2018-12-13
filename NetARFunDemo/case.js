@@ -36,6 +36,12 @@ window.onload = function () {
     }, {
         id: 'slide3',
         hideDur: 0
+    }, {
+        id: 'slide4',
+        hideDur: 0
+    }, {
+        id: 'slide5',
+        hideDur: 0
     }];
 
     

@@ -9,8 +9,6 @@
     <script src="https://unpkg.com/aframe-animation-component@4.0.0-beta8/dist/aframe-animation-component.min.js"></script>
     <script>ARjs.Context.baseURL = '/node_modules/ar.js/three.js/'</script>
     <script src="/customComponents/utils.js"></script>
-    <script src="/customComponents/charts/chart-grid.js"></script>
-    <script src="/customComponents/charts/chart.js"></script>
     <script>
         AFRAME.registerComponent('shadow-material', {
             init: function () {
@@ -104,6 +102,62 @@
             }
         });
 
+        AFRAME.registerComponent('slide4-material', {
+            dependencies: ['geometry'],
+            init: function () {
+                var mesh = this.el.getObject3D('mesh');
+
+                var textureFront = new THREE.ImageUtils.loadTexture('/content/images/screens/4.png');
+                var textureBack = new THREE.ImageUtils.loadTexture('/content/images/screens/4.png');
+
+                var materials = [
+                    new THREE.MeshBasicMaterial({ map: textureFront }),
+                    new THREE.MeshBasicMaterial({ map: textureBack }),
+                    new THREE.MeshBasicMaterial({ color: 0xb7b7b7 })];
+
+                mesh.material = new THREE.MeshFaceMaterial(materials);
+
+                for (var i = 0; i < mesh.geometry.faces.length; i++) {
+                    var face = mesh.geometry.faces[i];
+                    if (parseInt(i / 2) == 4) {
+                        face.materialIndex = 0;
+                    } else if (parseInt(i / 2) == 5) {
+                        face.materialIndex = 1;
+                    } else {
+                        face.materialIndex = 2;
+                    }
+                }
+            }
+        });
+
+        AFRAME.registerComponent('slide5-material', {
+            dependencies: ['geometry'],
+            init: function () {
+                var mesh = this.el.getObject3D('mesh');
+
+                var textureFront = new THREE.ImageUtils.loadTexture('/content/images/screens/5.png');
+                var textureBack = new THREE.ImageUtils.loadTexture('/content/images/screens/5.png');
+
+                var materials = [
+                    new THREE.MeshBasicMaterial({ map: textureFront }),
+                    new THREE.MeshBasicMaterial({ map: textureBack }),
+                    new THREE.MeshBasicMaterial({ color: 0xb7b7b7 })];
+
+                mesh.material = new THREE.MeshFaceMaterial(materials);
+
+                for (var i = 0; i < mesh.geometry.faces.length; i++) {
+                    var face = mesh.geometry.faces[i];
+                    if (parseInt(i / 2) == 4) {
+                        face.materialIndex = 0;
+                    } else if (parseInt(i / 2) == 5) {
+                        face.materialIndex = 1;
+                    } else {
+                        face.materialIndex = 2;
+                    }
+                }
+            }
+        });
+
     </script>
 </head>
 <body style='margin : 0px; overflow: hidden; font-family: Monospace; background-color: black;'>
@@ -140,6 +194,24 @@
                     <a-entity geometry="primitive: box; buffer: false; width: 0.65; height: 1.26; depth: 0.01;"
                               material="npot: true; shader:flat; vertexColors: face;"
                               slide3-material>
+                    </a-entity>
+                </a-entity>
+                
+                <a-entity id="slide4"
+                          visible="false"
+                          position="0.015 0.8 0.1">
+                    <a-entity geometry="primitive: box; buffer: false; width: 0.65; height: 1.26; depth: 0.01;"
+                              material="npot: true; shader:flat; vertexColors: face;"
+                              slide4-material>
+                    </a-entity>
+                </a-entity>
+                
+                <a-entity id="slide5"
+                          visible="false"
+                          position="0.015 0.8 0.1">
+                    <a-entity geometry="primitive: box; buffer: false; width: 0.65; height: 1.26; depth: 0.01;"
+                              material="npot: true; shader:flat; vertexColors: face;"
+                              slide5-material>
                     </a-entity>
                 </a-entity>
 
